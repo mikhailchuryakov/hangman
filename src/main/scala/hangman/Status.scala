@@ -1,3 +1,5 @@
+package hangman
+
 sealed trait Status
 
 case class Success(word: String) extends Status

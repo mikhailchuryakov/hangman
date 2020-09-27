@@ -1,3 +1,5 @@
+package hangman
+
 class Hangman(val word: String) {
   var current: String = "*" * word.length
   var idx = 0

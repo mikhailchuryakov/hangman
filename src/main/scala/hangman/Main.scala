@@ -1,3 +1,5 @@
+package hangman
+
 import scala.io.StdIn
 import scala.util.Random
 
@@ -19,5 +21,3 @@ object Main extends App {
       play(hangman.guess(StdIn.readChar()))
   }
 }
-
-
