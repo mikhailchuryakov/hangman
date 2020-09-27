@@ -21,3 +21,6 @@ lazy val hangman = (project in file("."))
     name := "hangman",
     libraryDependencies += scalatest,
   )
+
+addCommandAlias("fmt", "all scalafmtSbt scalafmt test:scalafmt")
+addCommandAlias("checkfmt", "all scalafmtSbtCheck scalafmtCheck test:scalafmtCheck")

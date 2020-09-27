@@ -2,7 +2,7 @@ package hangman
 
 class Hangman(val word: String) {
   var current: String = "*" * word.length
-  var idx = 0
+  var idx             = 0
 
   def guess(letter: Char): Status = {
     val after: String = word.zip(current).map { case (l, r) => if (l == letter) l else r }.mkString
@@ -12,8 +12,7 @@ class Hangman(val word: String) {
       println(Hangman.picture(idx))
       if (idx == Hangman.limit) Failure(after)
       else Continue(after)
-    }
-    else if (after == word) Success(after)
+    } else if (after == word) Success(after)
     else {
       println(Hangman.rightMsg)
       println(Hangman.wordMsg(after))
@@ -25,17 +24,17 @@ class Hangman(val word: String) {
 
 object Hangman {
   val limit: Int = 5
-  val words = List("hangman", "competition", "failure")
+  val words      = List("hangman", "competition", "failure")
 
   def wrongMsg(attempt: Int): String = s"Missed, mistake $attempt out of 5."
 
   val rightMsg: String = "Hit!"
-  val previewMsg = "Guess a letter:"
-  val loseMsg: String = "You lost!"
+  val previewMsg       = "Guess a letter:"
+  val loseMsg: String  = "You lost!"
 
   def wordMsg(word: String): String = s"The word: $word"
 
-  val winMsg: String = "You won!"
+  val winMsg: String   = "You won!"
   val guessMsg: String = "Guess a letter:"
 
   val picture = Map(
